@@ -11,17 +11,31 @@ const breadthFirstPrint = (graph, source) => {
   }
 };
 
-const breadthFirstPrintRecursive = (graph, source) => {
-  const current = graph[source];
-  console.log(source);
-  if (current.length > 0) {
-    current.forEach((a) => {
-      breadthFirstPrintRecursive(graph, a)
-    });
+// const breadthFirstPrintRecursive = (graph, source) => {
+//   const current = graph[source];
+//   console.log(source);
+//   if (current.length > 0) {
+//     current.forEach((a) => {
+//       breadthFirstPrintRecursive(graph, a)
+//     });
+//   }
+// };
+
+const hasPath = (graph, src, dest) => {
+  if (src === dest) return true;
+  const queue = [src];
+  while (queue.length > 0) {
+    const current = queue.shift();
+    if (current === dest) return true;
+    for (let neighbor of graph[current]) {
+      queue.push(neighbor);
+    }
   }
 };
+
+console.log(hasPath(a, "a", "a"));
 
 // breadthFirstPrint(a, "a");
 // breadthFirstPrintRecursive(a, "a");
 
-export { breadthFirstPrint };
+export { breadthFirstPrint, hasPath };
