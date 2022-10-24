@@ -6,3 +6,11 @@ export const a = {
   e: [],
   f: [],
 };
+
+export const undirectedGraph = [
+  ["i", "j"],
+  ["k", "i"],
+  ["m", "k"],
+  ["k", "l"],
+  ["o", "n"],
+];

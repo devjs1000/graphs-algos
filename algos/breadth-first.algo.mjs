@@ -11,16 +11,6 @@ const breadthFirstPrint = (graph, source) => {
   }
 };
 
-// const breadthFirstPrintRecursive = (graph, source) => {
-//   const current = graph[source];
-//   console.log(source);
-//   if (current.length > 0) {
-//     current.forEach((a) => {
-//       breadthFirstPrintRecursive(graph, a)
-//     });
-//   }
-// };
-
 const hasPath = (graph, src, dest) => {
   if (src === dest) return true;
   const queue = [src];
@@ -33,9 +23,8 @@ const hasPath = (graph, src, dest) => {
   }
 };
 
-console.log(hasPath(a, "a", "a"));
+// console.log(hasPath(a, "a", "a"));
 
 // breadthFirstPrint(a, "a");
-// breadthFirstPrintRecursive(a, "a");
 
 export { breadthFirstPrint, hasPath };

@@ -1,4 +1,4 @@
-import { a } from "../data/graph.data.mjs";
+import { a, undirectedGraph } from "../data/graph.data.mjs";
 
 const depthFirstPrint = (graph, source) => {
   const stack = [source];
@@ -20,6 +20,11 @@ const hasPath = (graph, src, dest) => {
   }
 };
 
-depthFirstPrint(a, "a");
+
+// console.log(buildGraph(undirectedGraph));
+
+// console.log(hasPath(a, "a", "a"));
+
+// depthFirstPrint(a, "a");
 
 export { depthFirstPrint, hasPath };
