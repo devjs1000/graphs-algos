@@ -11,7 +11,15 @@ const depthFirstPrint = (graph, source) => {
   }
 };
 
+const hasPath = (graph, src, dest) => {
+  if (src === dest) return true;
+  const allNeighbors = graph[src];
+  for (let neighbor of allNeighbors) {
+    const res = hasPath(graph, neighbor, dest);
+    if (res) return true;
+  }
+};
 
 depthFirstPrint(a, "a");
 
-export { depthFirstPrint};
+export { depthFirstPrint, hasPath };
